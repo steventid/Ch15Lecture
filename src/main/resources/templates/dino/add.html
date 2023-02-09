@@ -2,9 +2,34 @@
 <html lang="en" xmlns: th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title></title>
 </head>
 <body>
+
+  <h1>Add Dinosaur</h1>
+
+  <form method="post">
+      Species:
+      <input type="text" name="species"/>
+      <span th:if="${errorMsg != null}" th:text="${errorMsg}" style="color:red"></span>
+      <br>
+      Diet:
+      <select name="diet">
+          <option value="Herbivore">Herbivore</option>
+          <option value="Carnivore">Carnivore</option>
+          <option value="Omnivore">Omnivore</option>
+      </select>
+      <br>
+      Is the dino aquatic?
+      <select name="aquatic">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+      </select>
+      <br>
+      <button>Add dino!</button>
+
+  </form>
+
 
 </body>
 </html>

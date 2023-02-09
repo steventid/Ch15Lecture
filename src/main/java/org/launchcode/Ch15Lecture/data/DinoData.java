@@ -12,4 +12,8 @@ public class DinoData {
         return allDinos;
     }
 
+    public static void addDino(Dinosaur newDinoObj) {
+        allDinos.add(newDinoObj);
+    }
+
 }
