@@ -23,7 +23,8 @@ public class DinoController {
     }
 
     @GetMapping("add")
-    public String displayAddDinoForm() {
+    public String displayAddDinoForm(Model model) {
+        model.addAttribute("dinosaur", new Dinosaur());
         return "dino/add";
     }
 
@@ -37,8 +38,9 @@ public class DinoController {
         }
 
         DinoData.addDino(newDinoObj);
-        model.addAttribute("allDinos", DinoData.getAllDinos());
-        return "dino/index";
+        //model.addAttribute("allDinos", DinoData.getAllDinos());
+        //return "dino/index";
+        return "redirect:"; //send get request back to root path from this controller
     }
 
 }

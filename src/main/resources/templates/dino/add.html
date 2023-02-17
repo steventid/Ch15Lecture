@@ -5,23 +5,22 @@
     <title></title>
 </head>
 <body>
-
   <h1>Add Dinosaur</h1>
 
   <form method="post">
       Species:
-      <input type="text" name="species"/>
+      <input type="text" th:field="${dinosaur.species}"/>
       <span th:if="${errorMsg != null}" th:text="${errorMsg}" style="color:red"></span>
       <br>
       Diet:
-      <select name="diet">
+      <select th:field="${dinosaur.diet}">
           <option value="Herbivore">Herbivore</option>
           <option value="Carnivore">Carnivore</option>
           <option value="Omnivore">Omnivore</option>
       </select>
       <br>
       Is the dino aquatic?
-      <select name="aquatic">
+      <select th:field="${dinosaur.aquatic}">
           <option value="no">No</option>
           <option value="yes">Yes</option>
       </select>
